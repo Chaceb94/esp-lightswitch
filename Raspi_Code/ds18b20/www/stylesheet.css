@@ -1,0 +1,31 @@
+body{
+	background-color: #000000;
+    font-size:1em;
+	font-family: Courier New;
+	text-align: center;
+}
+
+header {
+    background-color:black;
+    width:100%;
+    height:auto;
+    border: solid 4px green;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+embed {
+	width:90%;
+    float: left
+}
+
+h1{
+	color: lightblue;
+	font-size: 1em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 700;
+    
+}
+

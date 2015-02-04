@@ -1,4 +1,4 @@
-# ESP8266-based DHT11 (and 22) logger
+# ESP8266-based DS18B20 logger
 
 This application builds on [Martin's DHT22 webserver](http://harizanov.com/2014/11/esp8266-powered-web-server-led-control-dht22-temperaturehumidity-sensor-reading/) implementation, which uses [sprite_tm's ESP8266 httpd](http://www.esp8266.com/viewtopic.php?f=6&t=376).
 
