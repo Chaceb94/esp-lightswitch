@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Chace's Room</title>
+</head>
+
+<body onload="pageLoaded()">
+
+<div id="main">
+    <li>If you haven't connected this device to your WLAN network now, you can <a href="/wifi">do so.</a></li>
+    <form method="get" action="led.cgi">
+        <input type="submit" id="light" name="led" value="%ledstate%">   
+    </form>
+    <table>
+        <tr>
+            <td>Temp:</td>		
+            <td>%temperature%&degF</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    btn = document.getElementById('light');
+  
+    function clicked()
+    {
+        pageLoaded();  
+    }
+
+    function pageLoaded()
+    {
+        var buttonState = btn.value;
+        if (buttonState == 'on')
+        {
+            btn.style.color = "black";
+            btn.style.borderColor = "black";
+            btn.style.backgroundColor = "white";
+        }
+        if (buttonState == 'off')
+        {
+            btn.style.color = "white";
+            btn.style.borderColor = "white";
+            btn.style.backgroundColor = "black";
+        }
+    }
+
+    document.ontouchmove = function(e)
+    { 
+        e.preventDefault(); 
+    }
+
+</script>
+</body>
+</html>

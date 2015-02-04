@@ -11,31 +11,26 @@
 
 #include "espmissingincludes.h"
 #include "osapi.h"
-
 #include "ets_sys.h"
 #include "httpd.h"
 #include "io.h"
-#include "dht.h"
 #include "httpdespfs.h"
 #include "cgi.h"
-#include "cgiwifi.h"
 #include "stdout.h"
-#include "wifi.h"
 #include "tempd.h"
+#include "wifi.h"
+#include "cgiwifi.h"
 
 HttpdBuiltInUrl builtInUrls[]={
-	{"/", cgiRedirect, "/index.tpl"},
-	{"/flash.bin", cgiReadFlash, NULL},
-	{"/led.tpl", cgiEspFsTemplate, tplLed},
-	{"/dht22.tpl", cgiEspFsTemplate, tplDHT},
-	{"/index.tpl", cgiEspFsTemplate, tplCounter},
+	{"/", cgiRedirect, "/index.html"},
+	{"/index.html", cgiEspFsTemplate, tplLed},
 	{"/led.cgi", cgiLed, NULL},
 
 	//Routines to make the /wifi URL and everything beneath it work.
-	{"/wifi", cgiRedirect, "/wifi/wifi.tpl"},
-	{"/wifi/", cgiRedirect, "/wifi/wifi.tpl"},
+	{"/wifi", cgiRedirect, "/wifi/wifi.html"},
+	{"/wifi/", cgiRedirect, "/wifi/wifi.html"},
 	{"/wifi/wifiscan.cgi", cgiWiFiScan, NULL},
-	{"/wifi/wifi.tpl", cgiEspFsTemplate, tplWlan},
+	{"/wifi/wifi.html", cgiEspFsTemplate, tplWlan},
 	{"/wifi/connect.cgi", cgiWiFiConnect},
 
 	{"*", cgiEspFsHook, NULL}, //Catch-all cgi function for the filesystem
@@ -46,7 +41,6 @@ HttpdBuiltInUrl builtInUrls[]={
 void user_init(void) {
 	stdoutInit();
 	ioInit();
-	DHTInit(SENSOR_DHT11, 30000);
 	httpdInit(builtInUrls, 80);
         wifiCheck();
         tempdInit();

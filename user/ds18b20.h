@@ -33,4 +33,11 @@ This library works with both 430 and Stellaris using the Energia IDE.
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+struct sensor_reading{
+	float temperature;
+	const char* source;
+	uint8_t sensor_id[16];
+	BOOL success;
+};
+
 struct sensor_reading* readDS18B20(void);

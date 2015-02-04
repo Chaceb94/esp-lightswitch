@@ -40,8 +40,6 @@ This library works with both 430 and Stellaris using the Energia IDE.
 #include "espconn.h"
 #include "mem.h"
 #include "gpio.h"
-#include "dht.h"
-
 #include "ds18b20.h"
 
 // list of commands DS18B20:
@@ -61,7 +59,7 @@ This library works with both 430 and Stellaris using the Energia IDE.
 #define DS1820_PIN 2
 
 static struct sensor_reading reading = {
-    .source = "DS18B20", .humidity=-1, .success = 0
+    .source = "DS18B20", .success = 0
 };
 
 
@@ -105,6 +103,9 @@ uint8_t LastDeviceFlag;
 void setup_DS1820(void){
     PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0);
     PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO2_U, FUNC_GPIO2);
+    
+    readDS18B20();
+    
 }
 
 void write_bit(int bit)
@@ -223,7 +224,6 @@ struct sensor_reading* readDS18B20(void)
     for (int k=0;k<9;k++){
         get[k]=read_byte();
     }
-    //os_printf("\n ScratchPAD DATA = %X %X %X %X %X %X %X %X %X\n",get[8],get[7],get[6],get[5],get[4],get[3],get[2],get[1],get[0]);
 
     dowcrc = 0;
     for(int i = 0; i < 8; i++){
@@ -243,11 +243,14 @@ struct sensor_reading* readDS18B20(void)
     uint16_t temp = temp_msb << 8 | temp_lsb;
     
     reading.success = 1;
+    // Get temp data from sensor
     reading.temperature = (temp * 625.0)/10000;
+    // Convert tamp data from Celsius to Farenheit (I know what a shame, but I'm an American and I havent used Celsius enough to know what's cold/warm/hot')
+    reading.temperature = (((reading.temperature) * 9) / 5) + 32;
     
-    os_printf("Got a DS18B20 Reading: %d.%d" ,
+    os_printf("Got a DS18B20 Reading: %d.%d\n" ,
     (int)reading.temperature,
-    (int)(reading.temperature - (int)reading.temperature) * 100
+    (int)((reading.temperature - (int)reading.temperature) * 100)
     );
     
     return &reading;
