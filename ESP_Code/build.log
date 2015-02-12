@@ -1,0 +1,728 @@
+CC user/stdout.c
+In file included from include/espmissingincludes.h:4:0,
+                 from user/stdout.c:13:
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:14:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSSignal;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:15:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSParam;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:27:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSHandle;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:32:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_expire;
+     ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:33:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_period;
+     ^
+user/stdout.c: In function 'stdoutUartTxd':
+user/stdout.c:20:2: error: unknown type name 'uint32_t'
+  while (((READ_PERI_REG(UART_STATUS(0))>>UART_TXFIFO_CNT_S)&UART_TXFIFO_CNT)>=126) ;
+  ^
+user/stdout.c:22:2: error: unknown type name 'uint32_t'
+  WRITE_PERI_REG(UART_FIFO(0), c);
+  ^
+In file included from /home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:12:0,
+                 from include/espmissingincludes.h:4,
+                 from user/stdout.c:13:
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:88: error: 'uint32_t' undeclared (first use in this function)
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                        ^
+user/stdout.c:22:2: note: in expansion of macro 'WRITE_PERI_REG'
+  WRITE_PERI_REG(UART_FIFO(0), c);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:88: note: each undeclared identifier is reported only once for each function it appears in
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                        ^
+user/stdout.c:22:2: note: in expansion of macro 'WRITE_PERI_REG'
+  WRITE_PERI_REG(UART_FIFO(0), c);
+  ^
+user/stdout.c: In function 'stdoutInit':
+user/stdout.c:34:2: error: unknown type name 'uint32_t'
+  PIN_PULLUP_DIS(PERIPHS_IO_MUX_U0TXD_U);
+  ^
+In file included from /home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:12:0,
+                 from include/espmissingincludes.h:4,
+                 from user/stdout.c:13:
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:88: error: 'uint32_t' undeclared (first use in this function)
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:244:50: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+ #define PIN_PULLUP_DIS(PIN_NAME)                 CLEAR_PERI_REG_MASK(PIN_NAME, PERIPHS_IO_MUX_PULLUP)
+                                                  ^
+user/stdout.c:34:2: note: in expansion of macro 'PIN_PULLUP_DIS'
+  PIN_PULLUP_DIS(PERIPHS_IO_MUX_U0TXD_U);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: expected ')' before 'uint32_t'
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:244:50: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+ #define PIN_PULLUP_DIS(PIN_NAME)                 CLEAR_PERI_REG_MASK(PIN_NAME, PERIPHS_IO_MUX_PULLUP)
+                                                  ^
+user/stdout.c:34:2: note: in expansion of macro 'PIN_PULLUP_DIS'
+  PIN_PULLUP_DIS(PERIPHS_IO_MUX_U0TXD_U);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: type defaults to 'int' in type name [-Werror]
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:244:50: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+ #define PIN_PULLUP_DIS(PIN_NAME)                 CLEAR_PERI_REG_MASK(PIN_NAME, PERIPHS_IO_MUX_PULLUP)
+                                                  ^
+user/stdout.c:34:2: note: in expansion of macro 'PIN_PULLUP_DIS'
+  PIN_PULLUP_DIS(PERIPHS_IO_MUX_U0TXD_U);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:30: error: invalid type argument of unary '*' (have 'int')
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                              ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:244:50: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+ #define PIN_PULLUP_DIS(PIN_NAME)                 CLEAR_PERI_REG_MASK(PIN_NAME, PERIPHS_IO_MUX_PULLUP)
+                                                  ^
+user/stdout.c:34:2: note: in expansion of macro 'PIN_PULLUP_DIS'
+  PIN_PULLUP_DIS(PERIPHS_IO_MUX_U0TXD_U);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: expected ')' before 'uint32_t'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:249:9: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+         CLEAR_PERI_REG_MASK(PIN_NAME, (PERIPHS_IO_MUX_FUNC<<PERIPHS_IO_MUX_FUNC_S)); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: type defaults to 'int' in type name [-Werror]
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:249:9: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+         CLEAR_PERI_REG_MASK(PIN_NAME, (PERIPHS_IO_MUX_FUNC<<PERIPHS_IO_MUX_FUNC_S)); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:36: error: invalid type argument of unary '*' (have 'int')
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                    ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:249:9: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+         CLEAR_PERI_REG_MASK(PIN_NAME, (PERIPHS_IO_MUX_FUNC<<PERIPHS_IO_MUX_FUNC_S)); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: expected ')' before 'uint32_t'
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:249:9: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+         CLEAR_PERI_REG_MASK(PIN_NAME, (PERIPHS_IO_MUX_FUNC<<PERIPHS_IO_MUX_FUNC_S)); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: type defaults to 'int' in type name [-Werror]
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:249:9: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+         CLEAR_PERI_REG_MASK(PIN_NAME, (PERIPHS_IO_MUX_FUNC<<PERIPHS_IO_MUX_FUNC_S)); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:30: error: invalid type argument of unary '*' (have 'int')
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                              ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:249:9: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+         CLEAR_PERI_REG_MASK(PIN_NAME, (PERIPHS_IO_MUX_FUNC<<PERIPHS_IO_MUX_FUNC_S)); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: expected ')' before 'uint32_t'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: type defaults to 'int' in type name [-Werror]
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:36: error: invalid type argument of unary '*' (have 'int')
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                    ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: expected ')' before 'uint32_t'
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:63: note: in expansion of macro 'READ_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: type defaults to 'int' in type name [-Werror]
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:63: note: in expansion of macro 'READ_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:30: error: invalid type argument of unary '*' (have 'int')
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                              ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:63: note: in expansion of macro 'READ_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/stdout.c:35:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_U0TXD_U, FUNC_U0TXD);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: expected ')' before 'uint32_t'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+user/stdout.c:39:2: note: in expansion of macro 'WRITE_PERI_REG'
+  WRITE_PERI_REG(UART_CONF0(0), (STICK_PARITY_DIS)|(ONE_STOP_BIT << UART_STOP_BIT_NUM_S)| \
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: type defaults to 'int' in type name [-Werror]
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+user/stdout.c:39:2: note: in expansion of macro 'WRITE_PERI_REG'
+  WRITE_PERI_REG(UART_CONF0(0), (STICK_PARITY_DIS)|(ONE_STOP_BIT << UART_STOP_BIT_NUM_S)| \
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:36: error: invalid type argument of unary '*' (have 'int')
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                    ^
+user/stdout.c:39:2: note: in expansion of macro 'WRITE_PERI_REG'
+  WRITE_PERI_REG(UART_CONF0(0), (STICK_PARITY_DIS)|(ONE_STOP_BIT << UART_STOP_BIT_NUM_S)| \
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: expected ')' before 'uint32_t'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                        ^
+user/stdout.c:43:2: note: in expansion of macro 'SET_PERI_REG_MASK'
+  SET_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: type defaults to 'int' in type name [-Werror]
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                        ^
+user/stdout.c:43:2: note: in expansion of macro 'SET_PERI_REG_MASK'
+  SET_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:36: error: invalid type argument of unary '*' (have 'int')
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                    ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                        ^
+user/stdout.c:43:2: note: in expansion of macro 'SET_PERI_REG_MASK'
+  SET_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: expected ')' before 'uint32_t'
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:63: note: in expansion of macro 'READ_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                                               ^
+user/stdout.c:43:2: note: in expansion of macro 'SET_PERI_REG_MASK'
+  SET_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: type defaults to 'int' in type name [-Werror]
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:63: note: in expansion of macro 'READ_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                                               ^
+user/stdout.c:43:2: note: in expansion of macro 'SET_PERI_REG_MASK'
+  SET_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:30: error: invalid type argument of unary '*' (have 'int')
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                              ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:63: note: in expansion of macro 'READ_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                                               ^
+user/stdout.c:43:2: note: in expansion of macro 'SET_PERI_REG_MASK'
+  SET_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: expected ')' before 'uint32_t'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                        ^
+user/stdout.c:44:2: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+  CLEAR_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: type defaults to 'int' in type name [-Werror]
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                        ^
+user/stdout.c:44:2: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+  CLEAR_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:36: error: invalid type argument of unary '*' (have 'int')
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                    ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                        ^
+user/stdout.c:44:2: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+  CLEAR_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: expected ')' before 'uint32_t'
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+user/stdout.c:44:2: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+  CLEAR_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: type defaults to 'int' in type name [-Werror]
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+user/stdout.c:44:2: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+  CLEAR_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:30: error: invalid type argument of unary '*' (have 'int')
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                              ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+user/stdout.c:44:2: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+  CLEAR_PERI_REG_MASK(UART_CONF0(0), UART_RXFIFO_RST|UART_TXFIFO_RST);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: expected ')' before 'uint32_t'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+user/stdout.c:46:2: note: in expansion of macro 'WRITE_PERI_REG'
+  WRITE_PERI_REG(UART_INT_CLR(0), 0xffff);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: type defaults to 'int' in type name [-Werror]
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+user/stdout.c:46:2: note: in expansion of macro 'WRITE_PERI_REG'
+  WRITE_PERI_REG(UART_INT_CLR(0), 0xffff);
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:36: error: invalid type argument of unary '*' (have 'int')
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                    ^
+user/stdout.c:46:2: note: in expansion of macro 'WRITE_PERI_REG'
+  WRITE_PERI_REG(UART_INT_CLR(0), 0xffff);
+  ^
+cc1: all warnings being treated as errors
+Makefile:166: recipe for target 'build/user/stdout.o' failed
+make: *** [build/user/stdout.o] Error 1
+CC user/httpdespfs.c
+In file included from include/espmissingincludes.h:4:0,
+                 from user/httpdespfs.c:14:
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:14:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSSignal;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:15:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSParam;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:27:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSHandle;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:32:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_expire;
+     ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:33:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_period;
+     ^
+Makefile:166: recipe for target 'build/user/httpdespfs.o' failed
+make: *** [build/user/httpdespfs.o] Error 1
+CC user/user_main.c
+In file included from include/espmissingincludes.h:4:0,
+                 from user/user_main.c:12:
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:14:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSSignal;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:15:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSParam;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:27:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSHandle;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:32:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_expire;
+     ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:33:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_period;
+     ^
+user/user_main.c: In function 'user_init':
+user/user_main.c:47:2: error: implicit declaration of function 'os_printf_plus' [-Werror=implicit-function-declaration]
+  os_printf("\nReady\n");
+  ^
+cc1: all warnings being treated as errors
+Makefile:166: recipe for target 'build/user/user_main.o' failed
+make: *** [build/user/user_main.o] Error 1
+CC user/tempd.c
+In file included from include/espmissingincludes.h:4:0,
+                 from user/tempd.c:1:
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:14:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSSignal;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:15:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSParam;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:27:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSHandle;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:32:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_expire;
+     ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:33:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_period;
+     ^
+In file included from user/tempd.c:10:0:
+user/ds18b20.h:39:2: error: unknown type name 'uint8_t'
+  uint8_t sensor_id[16];
+  ^
+user/tempd.c: In function 'broadcastReading':
+user/tempd.c:44:5: error: implicit declaration of function 'os_printf_plus' [-Werror=implicit-function-declaration]
+     os_printf("Sending heartbeat\n");
+     ^
+cc1: all warnings being treated as errors
+Makefile:166: recipe for target 'build/user/tempd.o' failed
+make: *** [build/user/tempd.o] Error 1
+CC user/wifi.c
+In file included from /home/chace/git/esp8266/esp-open-sdk/sdk/include/os_type.h:10:0,
+                 from /home/chace/git/esp8266/esp-open-sdk/sdk/include/user_interface.h:9,
+                 from user/wifi.c:3:
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:14:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSSignal;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:15:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSParam;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:27:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSHandle;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:32:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_expire;
+     ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:33:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_period;
+     ^
+Makefile:166: recipe for target 'build/user/wifi.o' failed
+make: *** [build/user/wifi.o] Error 1
+CC user/io.c
+In file included from user/io.c:11:0:
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:14:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSSignal;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:15:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSParam;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:27:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSHandle;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:32:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_expire;
+     ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:33:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_period;
+     ^
+user/io.c: In function 'ioInit':
+user/io.c:33:2: error: unknown type name 'uint32_t'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+In file included from /home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:12:0,
+                 from user/io.c:11:
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:88: error: 'uint32_t' undeclared (first use in this function)
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:249:9: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+         CLEAR_PERI_REG_MASK(PIN_NAME, (PERIPHS_IO_MUX_FUNC<<PERIPHS_IO_MUX_FUNC_S)); \
+         ^
+user/io.c:33:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:88: note: each undeclared identifier is reported only once for each function it appears in
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:249:9: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+         CLEAR_PERI_REG_MASK(PIN_NAME, (PERIPHS_IO_MUX_FUNC<<PERIPHS_IO_MUX_FUNC_S)); \
+         ^
+user/io.c:33:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: expected ')' before 'uint32_t'
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:249:9: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+         CLEAR_PERI_REG_MASK(PIN_NAME, (PERIPHS_IO_MUX_FUNC<<PERIPHS_IO_MUX_FUNC_S)); \
+         ^
+user/io.c:33:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: type defaults to 'int' in type name [-Werror]
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:249:9: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+         CLEAR_PERI_REG_MASK(PIN_NAME, (PERIPHS_IO_MUX_FUNC<<PERIPHS_IO_MUX_FUNC_S)); \
+         ^
+user/io.c:33:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:30: error: invalid type argument of unary '*' (have 'int')
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                              ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:51:63: note: in expansion of macro 'READ_PERI_REG'
+ #define CLEAR_PERI_REG_MASK(reg, mask) WRITE_PERI_REG((reg), (READ_PERI_REG(reg)&(~(mask))))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:249:9: note: in expansion of macro 'CLEAR_PERI_REG_MASK'
+         CLEAR_PERI_REG_MASK(PIN_NAME, (PERIPHS_IO_MUX_FUNC<<PERIPHS_IO_MUX_FUNC_S)); \
+         ^
+user/io.c:33:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: expected ')' before 'uint32_t'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/io.c:33:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:48: error: type defaults to 'int' in type name [-Werror]
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/io.c:33:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:36: error: invalid type argument of unary '*' (have 'int')
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                    ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:40: note: in expansion of macro 'WRITE_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                        ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/io.c:33:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: expected ')' before 'uint32_t'
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:63: note: in expansion of macro 'READ_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/io.c:33:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:42: error: type defaults to 'int' in type name [-Werror]
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                                          ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:63: note: in expansion of macro 'READ_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/io.c:33:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:49:30: error: invalid type argument of unary '*' (have 'int')
+ #define READ_PERI_REG(addr) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr)))
+                              ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:50:98: note: in definition of macro 'WRITE_PERI_REG'
+ #define WRITE_PERI_REG(addr, val) (*((volatile uint32_t *)ETS_UNCACHED_ADDR(addr))) = (uint32_t)(val)
+                                                                                                  ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:52:63: note: in expansion of macro 'READ_PERI_REG'
+ #define SET_PERI_REG_MASK(reg, mask)   WRITE_PERI_REG((reg), (READ_PERI_REG(reg)|(mask)))
+                                                               ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/eagle_soc.h:250:9: note: in expansion of macro 'SET_PERI_REG_MASK'
+         SET_PERI_REG_MASK(PIN_NAME, (((FUNC&BIT2)<<2)|(FUNC&0x3))<<PERIPHS_IO_MUX_FUNC_S); \
+         ^
+user/io.c:33:2: note: in expansion of macro 'PIN_FUNC_SELECT'
+  PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0); 
+  ^
+cc1: all warnings being treated as errors
+Makefile:166: recipe for target 'build/user/io.o' failed
+make: *** [build/user/io.o] Error 1
+CC user/httpd.c
+In file included from include/espmissingincludes.h:4:0,
+                 from user/httpd.c:13:
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:14:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSSignal;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:15:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSParam;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:27:1: error: unknown type name 'uint32_t'
+ typedef uint32_t ETSHandle;
+ ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:32:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_expire;
+     ^
+/home/chace/git/esp8266/esp-open-sdk/sdk/include/ets_sys.h:33:5: error: unknown type name 'uint32_t'
+     uint32_t              timer_period;
+     ^
+user/httpd.c: In function 'httpdFindConnData':
+user/httpd.c:85:2: error: implicit declaration of function 'os_printf_plus' [-Werror=implicit-function-declaration]
+  os_printf("FindConnData: Huh? Couldn't find connection for %p\n", arg);
+  ^
+cc1: all warnings being treated as errors
+Makefile:166: recipe for target 'build/user/httpd.o' failed
+make: *** [build/user/httpd.o] Error 1
+make: Target 'all' not remade because of errors.

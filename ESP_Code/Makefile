@@ -55,9 +55,9 @@ SDK_INCDIR	= include include/json
 # we create two different files for uploading into the flash
 # these are the names and options to generate them
 FW_FILE_1	= 0x00000
-FW_FILE_1_ARGS	= -bo $@ -bs .text -bs .data -bs .rodata -bc -ec
+# FW_FILE_1_ARGS	= -bo $@ -bs .text -bs .data -bs .rodata -bc -ec
 FW_FILE_2	= 0x40000
-FW_FILE_2_ARGS	= -es .irom0.text $@ -ec
+# FW_FILE_2_ARGS	= -es .irom0.text $@ -ec
 FW_FILE_3	= webpages.espfs
 
 # select which tools to use as compiler, librarian and linker
@@ -115,11 +115,11 @@ all: checkdirs $(TARGET_OUT) $(FW_FILE_1) $(FW_FILE_2)
 
 $(FW_FILE_1): $(TARGET_OUT) firmware
 	$(vecho) "FW $@"
-	$(Q) $(FW_TOOL) -eo $(TARGET_OUT) $(FW_FILE_1_ARGS)
+	$(Q) $(FW_TOOL) elf2image $(TARGET_OUT) # $(FW_FILE_1_ARGS)
 
 $(FW_FILE_2): $(TARGET_OUT) firmware
 	$(vecho) "FW $@"
-	$(Q) $(FW_TOOL) -eo $(TARGET_OUT) $(FW_FILE_2_ARGS)
+	$(Q) $(FW_TOOL) elf2image $(TARGET_OUT) # $(FW_FILE_2_ARGS)
 
 $(TARGET_OUT): $(APP_AR)
 	$(vecho) "LD $@"

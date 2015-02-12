@@ -74,7 +74,7 @@ static void dnsLookupCb(const char *name, ip_addr_t *ipaddr, void *arg){
     espconn_create(conn);
 
     os_printf("Arming broadcast timer\n");
-    os_timer_arm(&broadcastTimer, 300000, 1);
+    os_timer_arm(&broadcastTimer, 10000, 1);
 }
     
 static void lookupTask(void* arg){
